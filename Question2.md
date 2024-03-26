@@ -118,6 +118,10 @@ You can design your chatbot architecture to store your data on AWS and utilize G
 7. **Monitoring and Optimization**:
    - Monitor the performance of your chatbot's retrieval mechanisms, including both AWS queries and Google searches.
    - Analyze user interactions, feedback, and usage patterns to identify opportunities for optimization and refinement in the retrieval process.
+  
+something that might decrease our computational requirements:-
+Parallelization and Distributed Training: Parallelizing the training process across multiple devices or nodes and using distributed training techniques can help reduce training time but may require additional infrastructure and coordination.
+Fine-tuning and Incremental Training: Applying fine-tuning or incremental training mechanisms to adapt your LLM to new data or tasks may require retraining or updating only a subset of the model's parameters. While this can reduce computational requirements compared to training the entire model from scratch, it still requires resources for data processing, model evaluation, and optimization.
 
 By implementing this architecture, you can leverage the capabilities of both AWS and Google to ensure that your chatbot has access to a wide range of information sources while prioritizing the use of your AWS data and minimizing reliance on external searches when possible.
 
