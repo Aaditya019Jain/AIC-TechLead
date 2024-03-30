@@ -100,11 +100,30 @@ To implement the FreshPrompt Technique, we'll need a combination of tools and te
    - Integrate the updated input prompt with your RAG-based GPT model.
    - Ensure that the integration is seamless and the model can effectively utilize the fresh information during inference.
 
-
+Solution to Problems created using and their potential solutions 
 1. **Parallel Processing**:
    - Utilize parallel processing techniques to scrape information from multiple sources simultaneously.
    - This can help reduce the overall time taken for scraping, especially when fetching data from multiple relevant sources.
 
 2. **Token Limit**:
-   - This problem has some solution but don't look like perfect solution, I will 
+   - This problem has some solution but don't look like perfect solutions,
+     Dealing with token limits or rate limits imposed by websites when scraping data is a common challenge. Here are several strategies to handle this issue effectively:
 
+   1. **Implement Rate Limiting**:
+      - Respect the rate limits set by the website by implementing a delay between successive requests. This prevents overwhelming the server with too many requests in a short            period.
+      - Use libraries or tools that provide built-in rate limiting functionality, or manually implement delays in your scraping scripts.
+   
+   2. **Optimize Scraping Efficiency**:
+      - Make your scraping process more efficient by fetching only the necessary data from each page.
+      - Use selective scraping techniques to target specific elements or sections of the webpage that contain the most relevant information.
+      - Avoid unnecessary requests or redundant data retrieval.
+   
+   3. **Use Caching**:
+      - Cache previously scraped data to reduce the number of requests sent to the website.
+      - Implement a caching mechanism to store fetched data locally and retrieve it when needed instead of making repeated requests to the website.
+
+   4. **Use Headless Browsers**:
+      - Consider using headless browsers like Selenium WebDriver to scrape data. Headless browsers simulate the behavior of a real web browser, allowing you to interact with dynamic content and JavaScript-rendered pages.
+      - Use browser automation techniques to navigate through pages and scrape data while mimicking human-like behavior, which can help bypass certain rate-limiting mechanisms.
+
+   
