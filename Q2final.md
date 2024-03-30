@@ -2,13 +2,13 @@ Challenges stemming from large datasets in Retrieval-Augmented Generation (RAG) 
 
 To solve this one possible solution that i found out was to train our own LLM based the our data sets. this would give us the following advantages:-
 
-1. **Customization for Domain-specific Knowledge**: By training your own Language Model on your dataset, you can capture domain-specific nuances, vocabulary, and patterns that may not be present in pre-trained models like Gemini.
+1. **Customization for Domain-specific Knowledge**: By training our own Language Model on our dataset, we can capture domain-specific nuances, vocabulary, and patterns that may not be present in pre-trained models like Gemini.
 
-2. **Reduced Data Sparsity**: Training a Language Model on your dataset allows you to tailor the model's parameters to the specific distribution of your data. This can mitigate issues related to data sparsity by enabling the model to learn from the entirety of your dataset more effectively, including rare or specialized examples that might be overlooked in generic pre-trained models.
+2. **Reduced Data Sparsity**: Training a Language Model on our dataset allows we to tailor the model's parameters to the specific distribution of our data. This can mitigate issues related to data sparsity by enabling the model to learn from the entirety of our dataset more effectively, including rare or specialized examples that might be overlooked in generic pre-trained models.
 
-3. **Control Over Training Process**: Training your own LLM gives you full control over the training process, including data preprocessing, model architecture, hyperparameter tuning, and training duration. This control enables you to fine-tune the model according to your specific requirements, potentially improving its performance on tasks such as retrieval and generation.
+3. **Control Over Training Process**: Training our own LLM gives we full control over the training process, including data preprocessing, model architecture, hyperparameter tuning, and training duration. This control enables we to fine-tune the model according to our specific requirements, potentially improving its performance on tasks such as retrieval and generation.
 
-5. **Mitigating Model Drift**: By continuously retraining your LLM on updated versions of your dataset, you can adapt the model to changes in the underlying data distribution over time. This helps mitigate the risk of model drift, ensuring that the model remains relevant and effective in generating accurate and up-to-date content.
+5. **Mitigating Model Drift**: By continuously retraining our LLM on updated versions of our dataset, we can adapt the model to changes in the underlying data distribution over time. This helps mitigate the risk of model drift, ensuring that the model remains relevant and effective in generating accurate and up-to-date content.
 
 However, it's important to note that training a custom Language Model requires significant computational resources, expertise in machine learning, and careful consideration of ethical and legal implications, particularly regarding data privacy and bias. 
 
@@ -17,9 +17,94 @@ Every time we need to train out LLM we will have to train the complete LLM again
 1. **Incremental Training**:
    - Implement a system for incremental training, where new data is periodically added to the existing training dataset, and the LM is retrained on the combined dataset.
    - Use techniques like online learning or mini-batch training to efficiently incorporate new data without having to retrain the entire model from scratch.
-   - A brief of what incremental training is given [here](https://www.youtube.com/watch?v=FipRjQRaCz8)
+   - A brief of what incremental training is given [here](https://www.wetube.com/watch?v=FipRjQRaCz8)
    - the accuracy of the model which was trained completely was almost equal to the efficiency of the model that was trained using incremental training.
 
 2. **Transfer Learning**:
    - Leverage transfer learning techniques to adapt the pre-trained LM to new tasks or domains using limited amounts of new data.
    - Fine-tune the LM on a task-specific dataset or use techniques like domain adaptation to transfer knowledge from the pre-trained LM to the new task or domain.
+   - 
+
+Along with that to deal with more data we can implement RAG that uses Gymkhana Servers as its external base and only the data that is not on it will be searched by Google using a FallBack mechanism and in this I is intend to add the filtering component that will filter from which source has the information been used.
+
+The LLM will be periodically retrained using the incremental mechanisms and to keep it up to date the data will be continuosly updated on the Gymkhana Servers as and when the LLM will be trained in the data on Gymkhana servers will be erased and new data will start filling the Storage.
+
+<h3>Another Big Step Towards Real time Data updation and to reduce the hallucination of Insti-GPT - Fresh Prompt Technique</h3>
+
+This concept has been taken from the research paper [Fresh LLM](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://arxiv.org/abs/2310.03214&ved=2ahUKEwip7-XygpyFAxUN1DgGHWJOB4EQFnoECBAQAQ&usg=AOvVaw096ajgwZdynU8Cy2WLy7xP)
+
+<b>Fresh prompts</b> refer to input queries or requests that are updated with recent and relevant information before being used as input for a natural language processing (NLP) model or search engine. The term "fresh" implies that the prompts are augmented or enriched with up-to-date data, ensuring that the resulting responses or search results are timely and aligned with current knowledge or events. Fresh prompts are often utilized to enhance the accuracy, relevance, and recency of responses generated by NLP.
+
+1. **Implement FreshPrompt Technique**: Modify our RAG setup to incorporate the FreshPrompt technique. This involves fetching up-to-date and relevant information from our college servers or other sources and appending it to the prompt. Ensure that the information retrieved is recent and aligned with the context of the query.
+
+2. **Order of Evidences**: Adjust our RAG model to organize the retrieved evidences from our college servers based on their relevance and recency. We can utilize timestamps or other metadata to sort the evidences accordingly. This ensures that the model prioritizes the most relevant and recent information when generating responses.
+
+3. **Additional Information**: Enhance our RAG setup to include additional information beyond organic search results. We can fetch answer boxes, related questions, or supplementary data from our college servers to provide a more comprehensive understanding of the topic. Integrate this additional information into the model's knowledge base to improve response accuracy.
+
+Another thing that can be helpful is Number of Retrieved Evidences, but due to lack of time I wasn't able to think about it much.
+
+5. **Number of Retrieved Evidences**: Adjust the configuration of our RAG model to increase the number of retrieved evidences for each query from our college servers. Experiment with different retrieval strategies and parameters to find the optimal balance between the quantity and quality of retrieved information. Monitor the model's performance to ensure that the increased number of evidences contributes to improved accuracy without overwhelming the system.
+
+<H4>Implementation of Fresh Prompt Technique </H4>
+
+Implementing the FreshPrompt Technique involves dynamically updating the input prompt with up-to-date and relevant information before feeding it into your RAG-based GPT model. 
+
+1. **Define Data Sources**: Identify the sources from which you want to fetch fresh information. This could include web scraping tools, APIs, databases, or any other sources that provide up-to-date and relevant data. In your case, you mentioned using your college servers as the external database. Ensure that you have the necessary permissions and access to retrieve data from these sources.
+
+2. **Retrieve Fresh Information**: Develop scripts or modules to fetch fresh information from the identified sources. Depending on the nature of your data sources, you may need to use techniques such as web scraping, API calls, or database queries to retrieve the desired data. This step should be designed to retrieve information that is relevant to the context of the user query and aligns with the topic being discussed.
+
+3. **Format and Preprocess Data**: Once you retrieve the fresh information, format and preprocess it to make it compatible with the input format expected by your RAG-based GPT model. This may involve cleaning the data, removing irrelevant information, and structuring it in a way that can be easily integrated into the input prompt.
+
+4. **Update Input Prompt**: Modify your RAG setup to dynamically update the input prompt with the fresh information retrieved in the previous steps. This could involve appending the fresh data to the original prompt or replacing certain parts of the prompt with the updated information. Ensure that the updated prompt maintains coherence and relevance to the user query.
+
+5. **Integrate into RAG Pipeline**: Integrate the process of updating the input prompt with fresh information into your RAG pipeline. This may require modifying your existing codebase to accommodate the new functionality seamlessly. Ensure that the integration is robust and does not introduce any performance bottlenecks or stability issues.
+
+6. **Test and Validate**: (<b>not researched much about it </b>)
+
+The tools that we can use to achieve this are:
+
+To implement the FreshPrompt Technique, we'll need a combination of tools and technologies to fetch, process, and integrate fresh information into your RAG-based GPT model. Here's a breakdown of the tools you can use and the workflow to accomplish this task:
+
+1. **Web Scraping Tools**:
+   - **Beautiful Soup**: Python library for web scraping. It allows you to parse HTML and XML documents and extract the relevant data.
+   - **Scrapy**: A powerful web crawling framework for Python that provides a complete toolset for extracting structured data from websites.
+
+2. **APIs**:
+   - **Requests**: Python library for making HTTP requests. You can use it to interact with RESTful APIs and fetch data in JSON or XML format.
+   - **API Client Libraries**: If the data sources provide APIs, you might use client libraries specific to those APIs for easier integration and interaction.
+
+3. **Text Processing**:
+   - **Natural Language Toolkit (NLTK)**: Python library for natural language processing. It provides tools for tokenization, stemming, and other text processing tasks.
+   - **Spacy**: Another popular Python library for natural language processing. It offers features like named entity recognition and dependency parsing.
+
+**Workflow**:
+
+1. **Data Source Identification**: Identify the sources from which you want to fetch fresh information. This could include websites, APIs, databases, or any other relevant sources.
+
+2. **Data Retrieval**:
+   - Use web scraping tools or APIs to retrieve data from web pages or external services.
+   - If fetching data from databases
+   - Fetching Data from all the Sources mentioned can lead to a lot of computation and processing, this will lead to delay in response generation.
+   - To deal with this I came up with a method to first implement Google Search and find the top relevant sources or websites and then scrape them to make the Fresh Prompts.
+   - Disadvantage this would still lead to delay in the response generation but will give them with high accuracies and Reduced hallucination.
+   - One more thing that will lead to Reduction in hallucination will be Hard Coding the rejection of information from some sources like Instagram.
+
+3. **Data Processing**:
+   - Preprocess the retrieved data to clean and structure it appropriately.
+   - Perform text processing tasks like tokenization, stemming, or entity recognition if needed.
+
+4. **Input Prompt Update**:
+   - Modify the input prompt to incorporate the fresh information. This could involve appending the retrieved data to the prompt or replacing specific parts of it.
+
+5. **Integration with RAG Model**:
+   - Integrate the updated input prompt with your RAG-based GPT model.
+   - Ensure that the integration is seamless and the model can effectively utilize the fresh information during inference.
+
+
+1. **Parallel Processing**:
+   - Utilize parallel processing techniques to scrape information from multiple sources simultaneously.
+   - This can help reduce the overall time taken for scraping, especially when fetching data from multiple relevant sources.
+
+2. **Token Limit**:
+   - This problem has some solution but don't look like perfect solution, I will 
+
