@@ -17,4 +17,9 @@ Every time we need to train out LLM we will have to train the complete LLM again
 1. **Incremental Training**:
    - Implement a system for incremental training, where new data is periodically added to the existing training dataset, and the LM is retrained on the combined dataset.
    - Use techniques like online learning or mini-batch training to efficiently incorporate new data without having to retrain the entire model from scratch.
-   - A brief of what incremental training is given <i href = 'https://www.youtube.com/watch?v=FipRjQRaCz8'> here </i>
+   - A brief of what incremental training is given [here](https://www.youtube.com/watch?v=FipRjQRaCz8)
+   - the accuracy of the model which was trained completely was almost equal to the efficiency of the model that was trained using incremental training.
+
+2. **Transfer Learning**:
+   - Leverage transfer learning techniques to adapt the pre-trained LM to new tasks or domains using limited amounts of new data.
+   - Fine-tune the LM on a task-specific dataset or use techniques like domain adaptation to transfer knowledge from the pre-trained LM to the new task or domain.
