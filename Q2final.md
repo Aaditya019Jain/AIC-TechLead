@@ -163,7 +163,7 @@ Solution to Problems created using and their potential solutions
    
 <hr>
 
-Plane Of Action:-
+<h3>Plane Of Action:-</h3>
    - April - May --> Recruit junior engineers for AI community + End Sems (SO not so much work) + month wise division of JE on different projects.
    - May - June --> Discussion of all the projects to be taken up + acquiring requireed skills to do them
    - June - July --> ICML conference + Projetct 1 + Project 2
