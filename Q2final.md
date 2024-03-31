@@ -126,7 +126,10 @@ Solution to Problems created using and their potential solutions
       - Consider using headless browsers like Selenium WebDriver to scrape data. Headless browsers simulate the behavior of a real web browser, allowing you to interact with dynamic content and JavaScript-rendered pages.
       - Use browser automation techniques to navigate through pages and scrape data while mimicking human-like behavior, which can help bypass certain rate-limiting mechanisms.
 
-   <b>Alternative to Google Search and Performance Optimization:</b>
+<br>
+
+ <h3>Alternative to Google Search and Performance Optimization:</h3>
+ 
   1. The alternative of Google search can be Knowledge Graph, domain-specific corpora, or curated datasets. These are basically datasets with a lot less noise they can be created or their pre-defined datsets can also be used like **WikiData**.
   2. The mehtod that I defined earlier that was of Fresh Prompt Technique could cause many problems like token limits, a lot of hallucination as they contain a lot of noise in them. Knowledge graphs basically provide data with almost zero noise and very precise data.
   3. The data in knowledge graphs is basically organised in Nodes and Edges and they usually contain only a limit of words in between them, this helps them reduce noise to a great extent.
@@ -154,16 +157,16 @@ Solution to Problems created using and their potential solutions
 <hr>
 
 Plane Of Action:-
-April - May --> Recruit junior engineers for AI community + End Sems (SO not so much work) + month wise division of JE on different projects.
-May - June --> Discussion of all the projects to be taken up + acquiring requireed skills to do them
-June - July --> ICML conference + Projetct 1 + Project 2
-Agust - September --> Project 1 + Project 2 + Project 3(Starting+Learning) ------(Less Work due to intern season)
-September - October --> Project 3 + Project 4 
-October - November --> Hactober Fest + Project 4 + InterIIT Prepration
-November - December --> EndSems + Inter IIT preoration
-December - Jan --> NuerIPS + InterIIT
-Jan - Feb --> Project 5 + Project 6
-Feb - March --> Project 5 + Project 6
+   - April - May --> Recruit junior engineers for AI community + End Sems (SO not so much work) + month wise division of JE on different projects.
+   - May - June --> Discussion of all the projects to be taken up + acquiring requireed skills to do them
+   - June - July --> ICML conference + Projetct 1 + Project 2
+   - Agust - September --> Project 1 + Project 2 + Project 3(Starting+Learning) ------(Less Work due to intern season)
+   - September - October --> Project 3 + Project 4 
+   - October - November --> Hactober Fest + Project 4 + InterIIT Prepration
+   - November - December --> EndSems + Inter IIT preoration
+   - December - Jan --> NuerIPS + InterIIT
+   - Jan - Feb --> Project 5 + Project 6
+   - Feb - March --> Project 5 + Project 6
 
 There will be a meet every week to discuss the Progress of the projects and To discuss future work
 The inter IIT prepration will start from October itself hence only one project is taken along with than
@@ -175,4 +178,7 @@ The projects mentioned above are actually in this priority order:-
    4. Number plate detection for vehicles at IIT maingate
    5. Making Image to text model 
    6. Fine tune InstiGPT to add summarization and few other task
-
+   7. No details of ICSR have been out yet hence Couldn't add it. It is also a conference that we will be attending
+<br>
+Every time a project is taken half of the team will be working on 1st while the other will be working on the 2nd in the next month I along with the engineers working on 1st project will explain the complete workflow and and code to the 2nd team and vice versa.</br>
+After explaination the teams will exchange eachothers projects so that all of them should be able to learn both project.(this is not a Hard point it can be dropped or changed as and when required)
