@@ -29,6 +29,8 @@ Along with that to deal with more data we can implement RAG that uses Gymkhana S
 
 The LLM will be periodically retrained using the incremental mechanisms and to keep it up to date the data will be continuosly updated on the Gymkhana Servers as and when the LLM will be trained in the data on Gymkhana servers will be erased and new data will start filling the Storage.
 
+<hr>
+
 <h3>Another Big Step Towards Real time Data updation and to reduce the hallucination of Insti-GPT - Fresh Prompt Technique</h3>
 
 This concept has been taken from the research paper [Fresh LLM](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://arxiv.org/abs/2310.03214&ved=2ahUKEwip7-XygpyFAxUN1DgGHWJOB4EQFnoECBAQAQ&usg=AOvVaw096ajgwZdynU8Cy2WLy7xP)
@@ -45,7 +47,7 @@ Another thing that can be helpful is Number of Retrieved Evidences, but due to l
 
 5. **Number of Retrieved Evidences**: Adjust the configuration of our RAG model to increase the number of retrieved evidences for each query from our college servers. Experiment with different retrieval strategies and parameters to find the optimal balance between the quantity and quality of retrieved information. Monitor the model's performance to ensure that the increased number of evidences contributes to improved accuracy without overwhelming the system.
 
-<H4>Implementation of Fresh Prompt Technique </H4>
+<H3>Implementation of Fresh Prompt Technique </H3>
 
 Implementing the FreshPrompt Technique involves dynamically updating the input prompt with up-to-date and relevant information before feeding it into your RAG-based GPT model. 
 
