@@ -128,7 +128,7 @@ Solution to Problems created using and their potential solutions
       - Consider using headless browsers like Selenium WebDriver to scrape data. Headless browsers simulate the behavior of a real web browser, allowing you to interact with dynamic content and JavaScript-rendered pages.
       - Use browser automation techniques to navigate through pages and scrape data while mimicking human-like behavior, which can help bypass certain rate-limiting mechanisms.
 
-<br>
+<hr>
 
  <h3>Alternative to Google Search and Performance Optimization:</h3>
  
