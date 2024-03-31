@@ -137,8 +137,15 @@ Solution to Problems created using and their potential solutions
 
 
    <h3>Defining a model pipeline for fine tuning InstiGPT</h3>
-   1. I need to take an Open Source model which will allow me to fine tune it, the model that i am planning to use BART (large-sized model), fine-tuned on CNN Daily Mail, it has 406million trainable parameters.BART is a transformer encoder-encoder (seq2seq) model with bidirectional (BERT-like) encoder and an autoregressive (GPT) decoder . BART is pre-trained by corrupting text with an arbitrary noising function and learning a model to reconstruct the original text . This particular checkpoint has been fine-tuned on CNN Daily Mail .
+  
+   1. I need to take an Open Source model which will allow me to fine tune it, the model that i am planning to use BART (large-sized model), fine-tuned on CNN Daily Mail, it has 406million trainable parameters.BART is a transformer encoder-encoder (seq2seq) model with bidirectional (BERT-like) encoder and an autoregressive (GPT) decoder . BART is pre-trained by corrupting text with an arbitrary noising function and learning a model to reconstruct the original text . This particular checkpoint has been fine-tuned on CNN Daily Mail.
    2. The dataset that I will be using is the ccdv/pubmed-summarization, I was planning to have a dataset that was based on our own data but at this point doing this task manually was not possible.
    3. For Fine tuning the model we can used to finetune all of a model’s parameters for each downstream task, but this is becoming exceedingly costly and impractical . Instead, it is more efficient to train a smaller number of prompt parameters or use a reparametrization method like **low-rank adaptation (LoRA)** to reduce the number of trainable parameters .
    4. what lora does is basically it trains only a few parameters instead of training all of them this saves a lot of computation and cost.
+   5. For the deployment part we can fine-tune our model and just put it on the backend container of the gymkhana server VM.
+
+
+<h3>Cost Management and Resource Allocation:</h3>
+
+1. 
    
