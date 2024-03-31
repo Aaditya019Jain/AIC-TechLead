@@ -126,4 +126,19 @@ Solution to Problems created using and their potential solutions
       - Consider using headless browsers like Selenium WebDriver to scrape data. Headless browsers simulate the behavior of a real web browser, allowing you to interact with dynamic content and JavaScript-rendered pages.
       - Use browser automation techniques to navigate through pages and scrape data while mimicking human-like behavior, which can help bypass certain rate-limiting mechanisms.
 
+   <b>Alternative to Google Search and Performance Optimization:</b>
+  1. The alternative of Google search can be Knowledge Graph, domain-specific corpora, or curated datasets. These are basically datasets with a lot less noise they can be created or their pre-defined datsets can also be used like **WikiData**.
+  2. The mehtod that I defined earlier that was of Fresh Prompt Technique could cause many problems like token limits, a lot of hallucination as they contain a lot of noise in them. Knowledge graphs basically provide data with almost zero noise and very precise data.
+  3. The data in knowledge graphs is basically organised in Nodes and Edges and they usually contain only a limit of words in between them, this helps them reduce noise to a great extent.
+  4. To get greater amount of information or context we basically Use multihop models, they get sentences or information in a sequential oder that can be relevant to the promt entered by the user.
+  5. This cannot still ensure that all the data that we ask for is available in the knowledge graph and hence we still need to implement Google Search, All we need to do is ask the model to first look in the knowledge graph and then for Google search.
+  6. This process can still need to delay in response generation so instead of making it sequential we can parallelize this process such that both the searching happen parallely, only that if we get a repsonse from the knowledge Graph, Google data will be given less waitage.
+  7. Caching can also be one method that can help us in generating relevant and quiker response. The response can be stored at the server for a definite amount of time and whenever the same or similar question is asked the same information can be passed on.
+
+
+   <h3>Defining a model pipeline for fine tuning InstiGPT</h3>
+   1. I need to take an Open Source model which will allow me to fine tune it, the model that i am planning to use BART (large-sized model), fine-tuned on CNN Daily Mail, it has 406million trainable parameters.BART is a transformer encoder-encoder (seq2seq) model with bidirectional (BERT-like) encoder and an autoregressive (GPT) decoder . BART is pre-trained by corrupting text with an arbitrary noising function and learning a model to reconstruct the original text . This particular checkpoint has been fine-tuned on CNN Daily Mail .
+   2. The dataset that I will be using is the ccdv/pubmed-summarization, I was planning to have a dataset that was based on our own data but at this point doing this task manually was not possible.
+   3. For Fine tuning the model we can used to finetune all of a model’s parameters for each downstream task, but this is becoming exceedingly costly and impractical . Instead, it is more efficient to train a smaller number of prompt parameters or use a reparametrization method like **low-rank adaptation (LoRA)** to reduce the number of trainable parameters .
+   4. what lora does is basically it trains only a few parameters instead of training all of them this saves a lot of computation and cost.
    
