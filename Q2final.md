@@ -148,11 +148,18 @@ Solution to Problems created using and their potential solutions
    4. what lora does is basically it trains only a few parameters instead of training all of them this saves a lot of computation and cost.
    5. For the deployment part we can fine-tune our model and just put it on the backend container of the gymkhana server VM.
 
+<hr>
 
-<h3>Cost Management and Resource Allocation:</h3>
+<h3>Cost Management and Resource Allocation / Compute and Fine-Tuning Requirements:</h3>
 
 1. facebook/bart-large-cnn occupies around 16GB to 32GB space on GPU depending upon single precision or Half precision
 2. But at the same time PEFT can significantly reduce the trainable parameters to 0.23% of the original hence space occupied on the GPU will be around 36.8MB to 73.6MB only.
+3. While talking about the fine tuning of our LLM I want to select **llama2** which has 7billion parameters.
+4. 7billion parameters use around 14GB of GPU.
+5. This can be greatly reduced as while finetuning we can use PEFT (Parameter-Efficient Fine-Tuning) that will greatly reduce the computational requirements and will occupy much less space on GPU.
+6. For loading the models we can use Quantised models that require lesser space than the original model with very less trade-off with its accuracy.
+7. I conclude to use a 12GB Nvidia GPU that will cost around 13,000INR.
+8. We can sought to cloud GPU also that will cost us aroud 50,000INR per year for NVIDIA T4 GPU.
    
 <hr>
 
