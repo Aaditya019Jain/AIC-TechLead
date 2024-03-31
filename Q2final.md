@@ -135,6 +135,7 @@ Solution to Problems created using and their potential solutions
   6. This process can still need to delay in response generation so instead of making it sequential we can parallelize this process such that both the searching happen parallely, only that if we get a repsonse from the knowledge Graph, Google data will be given less waitage.
   7. Caching can also be one method that can help us in generating relevant and quiker response. The response can be stored at the server for a definite amount of time and whenever the same or similar question is asked the same information can be passed on.
 
+<hr>
 
    <h3>Defining a model pipeline for fine tuning InstiGPT</h3>
   
@@ -147,5 +148,31 @@ Solution to Problems created using and their potential solutions
 
 <h3>Cost Management and Resource Allocation:</h3>
 
-1. 
+1. facebook/bart-large-cnn occupies around 16GB to 32GB space on GPU depending upon single precision or Half precision
+2. But at the same time PEFT can significantly reduce the trainable parameters to 0.23% of the original hence space occupied on the GPU will be around 36.8MB to 73.6MB only.
    
+<hr>
+
+Plane Of Action:-
+April - May --> Recruit junior engineers for AI community + End Sems (SO not so much work) + month wise division of JE on different projects.
+May - June --> Discussion of all the projects to be taken up + acquiring requireed skills to do them
+June - July --> ICML conference + Projetct 1 + Project 2
+Agust - September --> Project 1 + Project 2 + Project 3(Starting+Learning) ------(Less Work due to intern season)
+September - October --> Project 3 + Project 4 
+October - November --> Hactober Fest + Project 4 + InterIIT Prepration
+November - December --> EndSems + Inter IIT preoration
+December - Jan --> NuerIPS + InterIIT
+Jan - Feb --> Project 5 + Project 6
+Feb - March --> Project 5 + Project 6
+
+There will be a meet every week to discuss the Progress of the projects and To discuss future work
+The inter IIT prepration will start from October itself hence only one project is taken along with than
+Appropriate ampunt of time will be given for endsems and quizzez to prevent junior engineers from lagging in their acads
+The projects mentioned above are actually in this priority order:-
+   1. InstiGPT with Fresh Prompt Technique/ Incremental Mechanism
+   2. Add Audio recognition to InstiGPT by collaborating with CS Prof
+   3. Add programming skills in InstiGPT
+   4. Number plate detection for vehicles at IIT maingate
+   5. Making Image to text model 
+   6. Fine tune InstiGPT to add summarization and few other task
+
